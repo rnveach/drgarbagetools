@@ -37,7 +37,6 @@ import com.drgarbage.core.CoreMessages;
  * @version $Revision$
  * $Id$
  */
-@SuppressWarnings("restriction")
 public class ASTViewPage extends Page {
 
 	public static String ASTViewPage_HIDE_PKG_DECL_ACTION_ID = "com.drgarbge.HIDE_PACKGE_DECL";
@@ -140,7 +139,7 @@ public class ASTViewPage extends Page {
 	 * Changes the checked status.
 	 * @param a the action object
 	 */
-	private void setCheckedStatus(IAction a){
+	private static void setCheckedStatus(IAction a){
 		if(a.isChecked()){
 			a.setChecked(true);
 		}

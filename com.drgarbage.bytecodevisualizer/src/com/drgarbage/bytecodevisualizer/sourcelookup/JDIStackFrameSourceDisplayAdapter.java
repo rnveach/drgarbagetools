@@ -270,7 +270,7 @@ public class JDIStackFrameSourceDisplayAdapter implements ISourceDisplay {
 	 * 
 	 * @param source thread or debug target
 	 */
-	private void clearSourceSelection(Object source) {		
+	private static void clearSourceSelection(Object source) {		
 		if (source instanceof IThread) {
 			IThread thread = (IThread)source;
 			DecorationManager.removeDecorations(thread);

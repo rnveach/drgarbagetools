@@ -115,7 +115,7 @@ public abstract class OperandStackViewPage extends Page {
 		TREE_VIEW,
 		BASICBKLOCK_VIEW,
 		INSTR_LIST_VIEW;
-	};
+	}
 
 	/**
 	 * Kind of the view. The value is one of the  REE_VIEW, 
@@ -128,7 +128,7 @@ public abstract class OperandStackViewPage extends Page {
 		DISPLAY_TYPES,
 		DISPLAY_VALUES,
 		DISPLAY_ALL
-	};
+	}
 
 	static enum ColumnIndex{
 		OFFSET(0),
@@ -147,7 +147,7 @@ public abstract class OperandStackViewPage extends Page {
 			return INDEX;
 		}
 
-	};
+	}
 	
 	public static Color RED = new Color(null,255,0,0);
 	public static Color ORANGE = new Color(null,255,127,0);

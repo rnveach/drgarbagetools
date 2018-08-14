@@ -55,7 +55,7 @@ public class ToggleBytecodeBreakpointAction extends Action implements IUpdate {
 
 	public static enum BytecodeDebugSupport {
 		AVAILABLE, BAD_DOCUMENT_LOCATION, BAD_EDITOR_INPUT
-	};
+	}
 
 	private static class SelectionData {
 		private BytecodeDebugSupport bytecodeDebugSupport = BytecodeDebugSupport.BAD_DOCUMENT_LOCATION;

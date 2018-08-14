@@ -23,9 +23,7 @@ import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.debug.internal.ui.DebugPluginImages;
 import org.eclipse.debug.internal.ui.DebugUIPlugin;
-import org.eclipse.debug.internal.ui.IInternalDebugUIConstants;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaModelException;
@@ -60,7 +58,6 @@ import com.drgarbage.bytecodevisualizer.BytecodeVisualizerPlugin;
  * @version $Revision$
  * $Id$
  */
-@SuppressWarnings("restriction")
 public class ProjectBuildPathDialog extends TitleAreaDialog {
 	
 	/**

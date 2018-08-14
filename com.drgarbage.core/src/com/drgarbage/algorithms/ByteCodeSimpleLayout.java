@@ -329,7 +329,7 @@ public class ByteCodeSimpleLayout extends DFSBase {
 	}
 	
 	//TODO: optimize
-	private boolean allIncomingEdgesVisited(INodeExt n){
+	private static boolean allIncomingEdgesVisited(INodeExt n){
 		IEdgeListExt edgeList = n.getIncomingEdgeList();
 		for(int i = 0; i < edgeList.size(); i++){
 			if(!edgeList.getEdgeExt(i).isVisited())

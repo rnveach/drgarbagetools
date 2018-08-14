@@ -15,7 +15,6 @@
  */
 package com.drgarbage.controlflowgraph.figures;
 
-import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.geometry.PointList;
@@ -111,7 +110,7 @@ public class CotoJumpVertexFigure extends Shape {
 	 * @param r - rectangle
 	 * @return list of points
 	 */
-	private PointList getPoints(Rectangle r){
+	private static PointList getPoints(Rectangle r){
 	    PointList pl = new PointList(6);
 	    pl.addPoint(r.x, r.y);
 	    pl.addPoint(r.x + r.width/2 + r.width/4, r.y);
@@ -133,7 +132,7 @@ public class CotoJumpVertexFigure extends Shape {
 	 * @param r - rectangle
 	 * @return list of points
 	 */
-	private PointList getPointsOutsideLeft(Rectangle r){
+	private static PointList getPointsOutsideLeft(Rectangle r){
 	    PointList pl = new PointList(3);
 		pl.addPoint(r.x, r.y);
 		pl.addPoint(r.x + r.width/4, r.y + r.height /2);
@@ -152,7 +151,7 @@ public class CotoJumpVertexFigure extends Shape {
 	 * </pre> 
 	 * @return list of points
 	 */
-	private PointList getPointsOutsideRight(Rectangle r){
+	private static PointList getPointsOutsideRight(Rectangle r){
 	    PointList pl = new PointList(5);
 	    pl.addPoint(r.x + r.width/2 + r.width/4, r.y);
 	    pl.addPoint(r.x + r.width, r.y);

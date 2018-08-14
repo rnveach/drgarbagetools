@@ -69,8 +69,6 @@ import com.drgarbage.asm.render.intf.IMethodSection;
 import com.drgarbage.bytecode.ByteCodeConstants;
 import com.drgarbage.bytecode.instructions.BranchInstruction;
 import com.drgarbage.bytecodevisualizer.BytecodeVisualizerPlugin;
-import com.drgarbage.core.CorePlugin;
-import com.drgarbage.core.preferences.CorePreferenceConstants;
 
 public class ClassFileConfiguration extends TextSourceViewerConfiguration {
 
@@ -476,16 +474,10 @@ public class ClassFileConfiguration extends TextSourceViewerConfiguration {
 		 */
 		private String text;
 
-		/**
-		 * The line number in which the link has been detected.
-		 */
-		private int lineNumber;
-
 		public ClassFileFieldLocalHyperLink(IRegion region, String text, int lineNumber) {
 			super();
 			this.region = region;
 			this.text = text;
-			this.lineNumber = lineNumber;
 		}
 
 		/* (non-Javadoc)
@@ -519,7 +511,7 @@ public class ClassFileConfiguration extends TextSourceViewerConfiguration {
 
 			IDocument document = fTextEditor.getDocumentProvider().getDocument(fTextEditor.getEditorInput()); 
 
-			int destOffset, destLength, elementIndex, elementLength;;
+			int destOffset, destLength, elementIndex, elementLength;
 
 			try {
 				destOffset = document.getLineOffset(field.getBytecodeDocumentLine());
@@ -569,7 +561,7 @@ public class ClassFileConfiguration extends TextSourceViewerConfiguration {
 
 
 				BytecodeEditor ed = (BytecodeEditor)fTextEditor;
-				BytecodeDocumentProvider byteCodeDocumentProvider = (BytecodeDocumentProvider)ed.getDocumentProvider();
+				ed.getDocumentProvider();
 				
 				//FIXME: byteCodeDocumentProvider.getClassFile() can be null for File Inputs
 				IClassFile cf = null;//byteCodeDocumentProvider.getClassFile();

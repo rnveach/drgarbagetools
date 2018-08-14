@@ -18,11 +18,6 @@ package com.drgarbage.controlflowgraph.figures;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.Rectangle;
-
-import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.Path;
-import org.eclipse.swt.widgets.Display;
 
 /**
  * @author sa
@@ -30,17 +25,14 @@ import org.eclipse.swt.widgets.Display;
  */
 public class RoundedRectangle extends org.eclipse.draw2d.RoundedRectangle {
 
-	private boolean useGradientFillColor = true;
 	private int connerSize = 20;//corner.height * 3;
 	
 	public RoundedRectangle(boolean useGradientFillColor, int c){
-		this.useGradientFillColor = useGradientFillColor;
 		connerSize = c;
 		this.setCornerDimensions(new Dimension(connerSize,connerSize));
 	}
 	
 	public RoundedRectangle(boolean useGradientFillColor){
-		this.useGradientFillColor = useGradientFillColor;
 		this.setCornerDimensions(new Dimension(connerSize,connerSize));
 	}
 	

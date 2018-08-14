@@ -26,7 +26,6 @@ import java.util.Map.Entry;
 import com.drgarbage.controlflowgraph.ControlFlowGraphException;
 import com.drgarbage.controlflowgraph.intf.GraphUtils;
 import com.drgarbage.controlflowgraph.intf.IDirectedGraphExt;
-import com.drgarbage.controlflowgraph.intf.IEdgeExt;
 import com.drgarbage.controlflowgraph.intf.INodeExt;
 import com.drgarbage.controlflowgraph.intf.INodeListExt;
 
@@ -429,44 +428,6 @@ public class BottomUpSubtreeIsomorphism {
 		if(!DEBUG) return;
 		
 		System.out.println(msg);
-	}
-	
-	/**
-	 * Prints the graph in the following format:
-	 * <pre>
-	 *   Print Graph:
-	 *   Nodes:
-	 *     w9
-	 *     w10
-	 *     v2
-	 *   Edges:
-	 *     v2 -> w9
-	 *     v2 -> w10
-	 * </pre>
-	 * 
-	 * NOTE: The method is disabled if the debugging flag set to false.
-	 * 
-	 * @param g the graph
-	 * @see #DEBUG
-	 */
-	private static void printGraph(IDirectedGraphExt g) {
-		if(!DEBUG) return;
-		
-		System.out.println("Print Graph:");
-
-		System.out.println("Nodes:");
-		for (int i = 0; i < g.getNodeList().size(); i++) {
-			System.out.println("  " + g.getNodeList().getNodeExt(i).getData());
-		}
-
-		System.out.println("Edges:");
-		for (int i = 0; i < g.getEdgeList().size(); i++) {
-			IEdgeExt e = g.getEdgeList().getEdgeExt(i);
-			System.out.println("  " 
-					+ e.getSource().getData()
-					+ " -> "
-					+ e.getTarget().getData());
-		}
 	}
 	
 	/**

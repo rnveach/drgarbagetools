@@ -174,7 +174,7 @@ public class ClassFileDocumentProvider extends FileDocumentProvider {
 		}
 	}
 
-	private void handleException(String message, Throwable t){
+	private static void handleException(String message, Throwable t){
 		IStatus status = BytecodeVisualizerPlugin.createErrorStatus(message, t);
 		BytecodeVisualizerPlugin.log(status);
 	}

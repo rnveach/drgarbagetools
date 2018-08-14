@@ -85,7 +85,7 @@ public class ExternalActionGenerateGraph implements IExternalCommunication {
 	 * @param graphtype
 	 * @return
 	 */
-	private ControlFlowGraphDiagram createGraphDiagram(List<AbstractInstruction> instructions, int graphtype){
+	private static ControlFlowGraphDiagram createGraphDiagram(List<AbstractInstruction> instructions, int graphtype){
 		ControlFlowGraphDiagram controlFlowGraphDiagram;
 
 		/* create control flow gaph diagram */
@@ -150,8 +150,8 @@ public class ExternalActionGenerateGraph implements IExternalCommunication {
 	 * @param methodSig
 	 * @return
 	 */
-	private ControlFlowGraphDiagram createGraphDiagram(String graphName, String[] classPath, String packageName, String className, String methodName, String methodSig){
-		ControlFlowGraphDiagram controlFlowGraphDiagram = null;;
+	private static ControlFlowGraphDiagram createGraphDiagram(String graphName, String[] classPath, String packageName, String className, String methodName, String methodSig){
+		ControlFlowGraphDiagram controlFlowGraphDiagram = null;
 		
 		try {
 			controlFlowGraphDiagram = ControlFlowGraphDiagramFactory.buildSourceControlFlowDiagram(classPath, packageName, className, methodName, methodSig);

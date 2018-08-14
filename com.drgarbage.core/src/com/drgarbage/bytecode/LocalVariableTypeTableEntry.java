@@ -16,9 +16,6 @@
 
 package com.drgarbage.bytecode;
 
-import java.io.DataInput;
-import java.io.IOException;
-
 /**
  * Describes an  <code>LocalVariableTypeTableEntry</code> attribute structure.
  *

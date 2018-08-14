@@ -44,7 +44,6 @@ import com.drgarbage.utils.Messages;
  * @version $Revision$
  * $Id$
  */
-@SuppressWarnings("restriction")
 public class OpenClassFileAction extends AbstractCompareClassFileAction implements IObjectActionDelegate {
 
     /* (non-Javadoc)
@@ -75,7 +74,7 @@ public class OpenClassFileAction extends AbstractCompareClassFileAction implemen
      * @return the java element or <code>null</null>
      * @see IJavaElement
      */
-    private IJavaElement selectJavaElement() {
+    private static IJavaElement selectJavaElement() {
 
         Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
         

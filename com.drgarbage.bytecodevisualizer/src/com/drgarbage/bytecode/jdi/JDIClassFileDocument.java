@@ -276,7 +276,6 @@ public class JDIClassFileDocument extends AbstractClassFileDocument {
 	/**
 	 * Creates JDI content.
 	 */
-	@SuppressWarnings("unchecked")
 	public void createJDIcontent(){
 		byte[] constPool = (byte[]) invokeReflectedMethod(referenceType, "constantPool");
 		Integer constPoolCount = (Integer) invokeReflectedMethod(referenceType, "constantPoolCount");
@@ -515,7 +514,7 @@ public class JDIClassFileDocument extends AbstractClassFileDocument {
 		methodBorderLinesList = null;
 		
 	}
-	private int getReflectedInt(Object inst, String fieldName) {
+	private static int getReflectedInt(Object inst, String fieldName) {
 		try {
 			java.lang.reflect.Field fld = inst.getClass().getDeclaredField(fieldName);
 			fld.setAccessible(true);
@@ -528,7 +527,7 @@ public class JDIClassFileDocument extends AbstractClassFileDocument {
 		return ByteCodeConstants.INVALID_OFFSET;
 	}
 
-	private long getReflectedLong(Object inst, String fieldName) {
+	private static long getReflectedLong(Object inst, String fieldName) {
 		try {
 			java.lang.reflect.Field fld = inst.getClass().getDeclaredField(fieldName);
 			fld.setAccessible(true);

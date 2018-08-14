@@ -288,7 +288,7 @@ public class ExportDialog extends Dialog {
 		 * so that pressing it will set input to null
 		 */
 		Button cancel = new Button(comp, SWT.PUSH);
-		cancel.setText(cancelButtonText);;
+		cancel.setText(cancelButtonText);
 		cancel.setBounds(270, 0, 80, 24);
 		cancel.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent event) {

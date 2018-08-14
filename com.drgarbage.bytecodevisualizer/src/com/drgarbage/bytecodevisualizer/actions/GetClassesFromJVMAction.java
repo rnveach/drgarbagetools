@@ -17,16 +17,13 @@
 package com.drgarbage.bytecodevisualizer.actions;
 
 import org.eclipse.debug.ui.IDebugView;
-import org.eclipse.jdt.internal.ui.JavaPluginImages;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 
 import com.drgarbage.bytecode.jdi.dialogs.JDIExportFromJvmDialog;
-import com.drgarbage.bytecodevisualizer.BytecodeVisualizerConstants;
 import com.drgarbage.bytecodevisualizer.BytecodeVisualizerMessages;
 import com.drgarbage.bytecodevisualizer.BytecodeVisualizerPlugin;
 import com.drgarbage.bytecodevisualizer.preferences.BytecodeVisualizerPreferenceConstats;
-import com.drgarbage.core.img.CoreImg;
 import com.drgarbage.utils.Messages;
 
 /**
@@ -39,7 +36,6 @@ public class GetClassesFromJVMAction extends DebugViewAction {
 
 	public static final String ACTION_READ_CLASSES_FROM_JVM = "com.drgarbage.bytecodevisualizer.actions.Read_Classes_From_JVM";
 	
-	@SuppressWarnings("restriction")
 	public GetClassesFromJVMAction(IDebugView debugView) {
 		super(
 				ACTION_READ_CLASSES_FROM_JVM, 

@@ -28,7 +28,6 @@ import java.util.Set;
 
 import com.drgarbage.controlflowgraph.ControlFlowGraphException;
 import com.drgarbage.controlflowgraph.intf.IDirectedGraphExt;
-import com.drgarbage.controlflowgraph.intf.IEdgeExt;
 import com.drgarbage.controlflowgraph.intf.INodeExt;
 import com.drgarbage.controlflowgraph.intf.INodeListExt;
 
@@ -135,7 +134,7 @@ public class BottomUpMaxCommonSubtreeIsomorphism {
 	 * @return
 	 * @throws ControlFlowGraphException if the input structure has no root.
 	 */
-	private INodeExt getRootFromTree(IDirectedGraphExt tree) throws ControlFlowGraphException{
+	private static INodeExt getRootFromTree(IDirectedGraphExt tree) throws ControlFlowGraphException{
 		
 		INodeExt root = null;
 		for (int i = 0; i < tree.getNodeList().size(); i++) {
@@ -434,7 +433,7 @@ public class BottomUpMaxCommonSubtreeIsomorphism {
 	 * @param rightNodeToClassMap node equivalence classes of right tree
 	 * @param M map prefilled with the root nodes of the largest common subtree of T_1 and T_2
 	 */
-	private void mapIsomorphicNodes(IDirectedGraphExt leftGraph,
+	private static void mapIsomorphicNodes(IDirectedGraphExt leftGraph,
 			HashMap<INodeExt, Integer> leftNodeToClassMap,
 			HashMap<INodeExt, Integer> rightNodeToClassMap,
 			Map<INodeExt, INodeExt> M) {
@@ -487,44 +486,6 @@ public class BottomUpMaxCommonSubtreeIsomorphism {
 		if(!DEBUG) return;
 		
 		System.out.println(msg);
-	}
-	
-	/**
-	 * Prints the graph in the following format:
-	 * <pre>
-	 *   Print Graph:
-	 *   Nodes:
-	 *     w9
-	 *     w10
-	 *     v2
-	 *   Edges:
-	 *     v2 -> w9
-	 *     v2 -> w10
-	 * </pre>
-	 * 
-	 * NOTE: The method is disabled if the debugging flag set to false.
-	 * 
-	 * @param g the graph
-	 * @see #DEBUG
-	 */
-	private static void printGraph(IDirectedGraphExt g) {
-		if(!DEBUG) return;
-		
-		System.out.println("Print Graph:");
-
-		System.out.println("Nodes:");
-		for (int i = 0; i < g.getNodeList().size(); i++) {
-			System.out.println("  " + g.getNodeList().getNodeExt(i).getData());
-		}
-
-		System.out.println("Edges:");
-		for (int i = 0; i < g.getEdgeList().size(); i++) {
-			IEdgeExt e = g.getEdgeList().getEdgeExt(i);
-			System.out.println("  " 
-					+ e.getSource().getData()
-					+ " -> "
-					+ e.getTarget().getData());
-		}
 	}
 	
 	/**

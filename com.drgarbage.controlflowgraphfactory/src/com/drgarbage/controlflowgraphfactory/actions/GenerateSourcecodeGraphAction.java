@@ -23,9 +23,7 @@ import org.eclipse.core.runtime.Status;
 
 import com.drgarbage.controlflowgraph.ControlFlowGraphException;
 import com.drgarbage.controlflowgraphfactory.ControlFlowFactoryPlugin;
-import com.drgarbage.core.CoreMessages;
 import com.drgarbage.graph.GraphConstants;
-import com.drgarbage.utils.Messages;
 import com.drgarbage.visualgraphic.model.ControlFlowGraphDiagram;
 import com.drgarbage.visualgraphic.model.ControlFlowGraphDiagramFactory;
 

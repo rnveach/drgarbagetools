@@ -18,14 +18,10 @@ package com.drgarbage.bytecodevisualizer.editors;
 
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
@@ -38,12 +34,9 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.debug.core.DebugException;
-import org.eclipse.debug.core.model.IStackFrame;
-import org.eclipse.debug.core.model.IThread;
 import org.eclipse.debug.internal.ui.DebugUIPlugin;
 import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.debug.ui.IDebugUIConstants;
-import org.eclipse.debug.ui.IInstructionPointerPresentation;
 import org.eclipse.debug.ui.actions.IToggleBreakpointsTarget;
 import org.eclipse.draw2d.FigureCanvas;
 import org.eclipse.draw2d.MouseEvent;
@@ -60,17 +53,13 @@ import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jdt.debug.core.IJavaStackFrame;
-import org.eclipse.jdt.internal.core.SourceType;
 import org.eclipse.jdt.internal.debug.core.model.JDIStackFrame;
 import org.eclipse.jdt.internal.ui.JavaPlugin;
 import org.eclipse.jdt.internal.ui.JavaPluginImages;
 import org.eclipse.jdt.internal.ui.javaeditor.EditorUtility;
 import org.eclipse.jdt.internal.ui.javaeditor.IClassFileEditorInput;
-import org.eclipse.jdt.internal.ui.javaeditor.ICompilationUnitDocumentProvider;
 import org.eclipse.jdt.internal.ui.javaeditor.InternalClassFileEditorInput;
 import org.eclipse.jdt.internal.ui.javaeditor.JavaEditor;
-import org.eclipse.jdt.internal.ui.javaeditor.JavaEditorBreadcrumb;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.ui.text.IColorManager;
 import org.eclipse.jdt.ui.text.IJavaPartitions;
@@ -86,7 +75,6 @@ import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.IRegion;
 import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.jface.text.TextSelection;
-import org.eclipse.jface.text.source.IAnnotationModel;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.text.source.IVerticalRuler;
 import org.eclipse.jface.text.source.projection.IProjectionListener;
@@ -96,7 +84,6 @@ import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
@@ -127,11 +114,9 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
-import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Sash;
@@ -162,11 +147,9 @@ import org.eclipse.ui.internal.part.NullEditorInput;
 import org.eclipse.ui.internal.texteditor.LineNumberColumn;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
-import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.ui.texteditor.AbstractDecoratedTextEditorPreferenceConstants;
 import org.eclipse.ui.texteditor.AbstractTextEditor;
 import org.eclipse.ui.texteditor.ChainedPreferenceStore;
-import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditorActionConstants;
 import org.eclipse.ui.texteditor.rulers.IColumnSupport;
 import org.eclipse.ui.texteditor.rulers.RulerColumnDescriptor;
@@ -187,7 +170,6 @@ import com.drgarbage.bytecodevisualizer.actions.BytecodevizualizerActionBarContr
 import com.drgarbage.bytecodevisualizer.actions.ExportGraphAndOpenWithControlflowgraphFactoryAction;
 import com.drgarbage.bytecodevisualizer.actions.ToggleBytecodeBreakpointAction;
 import com.drgarbage.bytecodevisualizer.preferences.BytecodeVisualizerPreferenceConstats;
-import com.drgarbage.bytecodevisualizer.view.OperandStackView;
 import com.drgarbage.bytecodevisualizer.view.OperandStackViewPage;
 import com.drgarbage.bytecodevisualizer.view.OperandStackViewPageIml;
 import com.drgarbage.core.CoreConstants;
@@ -761,7 +743,7 @@ public class BytecodeEditor extends JavaEditor
 	 * @param input The editor input for which to create the preference store
 	 * @return the preference store for this editor
 	 */
-	private IPreferenceStore createCombinedPreferenceStore(IEditorInput input) {
+	private static IPreferenceStore createCombinedPreferenceStore(IEditorInput input) {
 		List<IPreferenceStore> stores= new ArrayList<IPreferenceStore>(3);
 
 		/* own bytecode visualizer preferences */
@@ -1445,7 +1427,6 @@ public class BytecodeEditor extends JavaEditor
 	/* (non-Javadoc)
 	 * @see org.eclipse.jdt.internal.ui.javaeditor.JavaEditor#doSetInput(org.eclipse.ui.IEditorInput)
 	 */
-	@SuppressWarnings("restriction")
 	protected void doSetInput(IEditorInput input) throws CoreException {
 		
 		/* 
@@ -1653,11 +1634,6 @@ public class BytecodeEditor extends JavaEditor
 		return null;
 	}
 
-	/* bug#91 NullPointerException if license has been expired. */
-	private JavaEditor getEditor(){
-		return this;
-	}
-	
 	@Override
 	public IEditorInput getEditorInput() {
 		return getBytecodeEditorInput();
@@ -1670,22 +1646,6 @@ public class BytecodeEditor extends JavaEditor
 	protected IJavaElement getElementAt(int offset) {
 		/* nothing to do */
 		return null;
-	}
-
-	private int getIndexOfSelectedFrame(IJavaStackFrame selectedFrame) 
-	throws DebugException{
-		IThread thread = selectedFrame.getThread();
-		if(thread.hasStackFrames()){
-			IStackFrame s[] = thread.getStackFrames();
-			for(int i = 0; i < s.length; i++)
-			{
-				if(s[i].equals(selectedFrame)){
-					return i;
-				}
-			}
-		}
-
-		return -1;
 	}
 
 	/**
@@ -2036,7 +1996,7 @@ public class BytecodeEditor extends JavaEditor
 	 * otherwise false.
 	 * @return true or false
 	 */
-	private boolean isControlFlowgraphViewVisible(){
+	private static boolean isControlFlowgraphViewVisible(){
 		IWorkbenchWindow workbench = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
 		if(workbench == null){
 			return false;

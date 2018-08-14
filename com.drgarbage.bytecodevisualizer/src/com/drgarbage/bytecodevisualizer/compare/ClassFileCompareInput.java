@@ -146,7 +146,6 @@ public class ClassFileCompareInput extends CompareEditorInput {
      * @see org.eclipse.compare.CompareEditorInput#findContentViewer(org.eclipse.jface.viewers.Viewer, 
      * 		org.eclipse.compare.structuremergeviewer.ICompareInput, org.eclipse.swt.widgets.Composite)
      */
-	@SuppressWarnings("restriction")
     public Viewer findContentViewer(Viewer newViewer, ICompareInput input, Composite parent) {
     	Viewer viewer = null;    		
     	
@@ -202,8 +201,8 @@ public class ClassFileCompareInput extends CompareEditorInput {
         	final CompareContentViewerSwitchingPane ccvsp = (CompareContentViewerSwitchingPane)children[1];
         	Composite topLeft1 = (Composite)ccvsp.getTopLeft();
         	
-        	Composite topCenter =(Composite) ccvsp.getTopCenter();
-        	Composite topRight =(Composite) ccvsp.getTopRight();
+        	ccvsp.getTopCenter();
+        	ccvsp.getTopRight();
         	
         	/* make the menu invisible */
         	topLeft1.getChildren()[0].setVisible(false);

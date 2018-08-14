@@ -115,7 +115,7 @@ public class MaxWeightedBipartiteMatching extends HungarianMethod{
 	 * @param partBnew the reference to the new list
 	 * @return the symmetrical complete bipartite graph 
 	 */
-	private IDirectedGraphExt createSymetricalCompleteBipartiteGraph(
+	private static IDirectedGraphExt createSymetricalCompleteBipartiteGraph(
 			List<INodeExt> partA, 
 			List<INodeExt> partAnew, 
 			List<INodeExt> partB, 
@@ -219,7 +219,7 @@ public class MaxWeightedBipartiteMatching extends HungarianMethod{
 	 *  
 	 * @param graph the bipartite graph
 	 */
-	private void convertMinToMax(IDirectedGraphExt graph) {
+	private static void convertMinToMax(IDirectedGraphExt graph) {
 
 		int max = 0;
 		IEdgeListExt edges = graph.getEdgeList();

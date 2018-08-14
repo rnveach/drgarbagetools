@@ -28,7 +28,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.draw2d.AbstractLocator;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.osgi.framework.Bundle;
 
@@ -1423,7 +1422,7 @@ public abstract class AbstractClassFileDocument extends ClassVisitor
 	            final int min,
 	            final int max,
 	            final Label dflt,
-	            final Label[] labels)
+	            final Label... labels)
 	        {
 	            if (mv != null) {
 	                mv.visitTableSwitchInsn(min, max, dflt, labels);

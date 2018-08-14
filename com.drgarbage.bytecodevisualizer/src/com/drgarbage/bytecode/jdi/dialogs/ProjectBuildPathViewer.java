@@ -44,7 +44,6 @@ import org.eclipse.ui.model.WorkbenchContentProvider;
  * @version $Revision$
  * $Id$
  */
-@SuppressWarnings("restriction")
 public class ProjectBuildPathViewer extends TreeViewer {
 	
 	/**

@@ -45,7 +45,6 @@ import com.drgarbage.core.preferences.CorePreferenceConstants;
 /**
  * The activator class controls the plug-in life cycle
  */
-@SuppressWarnings("restriction")
 public class SourcecodeVisualizerPlugin extends AbstractUIPlugin {
 
 	/** 

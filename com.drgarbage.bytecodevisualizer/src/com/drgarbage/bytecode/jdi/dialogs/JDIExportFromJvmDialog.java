@@ -83,7 +83,6 @@ import com.sun.jdi.ReferenceType;
  * @version $Revision$
  * $Id$
  */
-@SuppressWarnings("restriction")
 public class JDIExportFromJvmDialog {
 
 	/**
@@ -611,7 +610,7 @@ public class JDIExportFromJvmDialog {
 	 * @return byte array
 	 * @see JDIUtils#getClassFileContent(ReferenceType)
 	 */
-	private byte[] getClassFileContent(String className) {
+	private static byte[] getClassFileContent(String className) {
 		Object o = DebugUITools.getDebugContext();
 		
 				ReferenceType ref = null;

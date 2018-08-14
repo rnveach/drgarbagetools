@@ -53,7 +53,7 @@ public class DiagramEditPartFactory implements EditPartFactory {
 	 * Maps an object to an EditPart. 
 	 * @throws RuntimeException if no match was found (programming error)
 	 */
-	private EditPart getPartForElement(Object modelElement) {
+	private static EditPart getPartForElement(Object modelElement) {
 		if (modelElement instanceof ControlFlowGraphDiagram) {
 			return new DiagramEditPart();
 		}

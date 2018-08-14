@@ -16,14 +16,10 @@
 
 package com.drgarbage.sourcecodevisualizer.actions;
 
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.widgets.Event;
-import org.eclipse.ui.ISharedImages;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.RetargetAction;
 
 
-import com.drgarbage.core.img.CoreImg;
 import com.drgarbage.sourcecodevisualizer.SourcecodeVisualizerMessages;
 import com.drgarbage.sourcecodevisualizer.editors.JavaCodeEditor;
 import com.drgarbage.sourcecodevisualizer.img.SourcecodeVisualzerImg;

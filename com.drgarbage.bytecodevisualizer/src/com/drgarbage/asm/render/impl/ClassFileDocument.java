@@ -32,7 +32,6 @@ import com.drgarbage.asm.MethodVisitor;
 import com.drgarbage.asm.render.intf.IClassFileDocument;
 import com.drgarbage.asm.render.intf.ILocalVariableTable;
 import com.drgarbage.asm.signature.SignatureReader;
-import com.drgarbage.asm.util.TraceClassVisitor;
 import com.drgarbage.bytecode.ByteCodeConstants;
 import com.drgarbage.bytecode.BytecodeUtils;
 import com.drgarbage.bytecode.ExceptionTableEntry;

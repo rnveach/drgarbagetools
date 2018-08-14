@@ -29,7 +29,6 @@ import org.eclipse.ui.IWorkbenchWindow;
 
 import com.drgarbage.core.jface.BaseAction;
 
-@SuppressWarnings("restriction")
 public class DebugViewAction extends BaseAction implements
 		IDebugContextListener, IVersion {
 	protected IDebugView debugView;

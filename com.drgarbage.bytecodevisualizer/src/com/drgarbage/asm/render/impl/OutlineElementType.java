@@ -61,7 +61,6 @@ public class OutlineElementType extends OutlineElement implements IType {
 	private int flags = 0;
 
 	/* empty constants */
-	private static final IField[] NO_FIELDS = new IField[0];
 	private static final IMethod[] NO_METHODS = new IMethod[0];
 	private static final IType[] NO_TYPES = new IType[0];
 	private static final IInitializer[] NO_INITIALIZERS = new IInitializer[0];

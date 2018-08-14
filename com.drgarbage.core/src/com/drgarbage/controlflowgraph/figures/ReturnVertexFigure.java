@@ -93,7 +93,7 @@ public class ReturnVertexFigure extends Shape {
 	 * @param r - rectangle
 	 * @return list of points
 	 */
-	private PointList getPoints(Rectangle r){
+	private static PointList getPoints(Rectangle r){
 	    PointList pl = new PointList(5);
 	    pl.addPoint(r.x, r.y);
 	    pl.addPoint(r.x + r.width - 1, r.y);
@@ -112,7 +112,7 @@ public class ReturnVertexFigure extends Shape {
 	 * @param r - rectangle
 	 * @return list of points
 	 */
-	private PointList getPointsOutside(Rectangle r){
+	private static PointList getPointsOutside(Rectangle r){
 	    PointList pl = new PointList(5);
 	    pl.addPoint(r.x, r.y + r.height/2 + r.height/4);
 	    pl.addPoint(r.x + r.width/2, r.y + r.height - 1);

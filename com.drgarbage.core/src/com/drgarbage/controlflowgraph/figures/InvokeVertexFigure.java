@@ -99,7 +99,7 @@ public class InvokeVertexFigure extends Shape {
 	 * @param r - rectangle
 	 * @return list of points
 	 */
-	private PointList getPoints(Rectangle r){
+	private static PointList getPoints(Rectangle r){
 	    PointList pl = new PointList(5);
 	    pl.addPoint(r.x, r.y);
 	    pl.addPoint(r.x + r.width/2 + r.width/4, r.y);
@@ -119,7 +119,7 @@ public class InvokeVertexFigure extends Shape {
 	 * @param r - rectangle
 	 * @return list of points
 	 */
-	private PointList getPointsOutside(Rectangle r){
+	private static PointList getPointsOutside(Rectangle r){
 	    PointList pl = new PointList(7);
 	    pl.addPoint(r.x + r.width + 1, r.y);
 	    pl.addPoint(r.x + r.width/2 + r.width/4, r.y);

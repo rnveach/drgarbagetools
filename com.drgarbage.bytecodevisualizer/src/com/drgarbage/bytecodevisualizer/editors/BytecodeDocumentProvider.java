@@ -88,7 +88,6 @@ import com.sun.jdi.ReferenceType;
  * @version $Revision$
  * $Id$
  */
-@SuppressWarnings("restriction")
 public class BytecodeDocumentProvider extends FileDocumentProvider {
 
 	/**

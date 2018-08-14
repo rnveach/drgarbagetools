@@ -205,7 +205,7 @@ public class SelectJavaTypeDialog extends MessageDialog {
         
     }
     
-    private IDialogSettings getDialogSettings(String dialogSettingsSectionName) {
+    private static IDialogSettings getDialogSettings(String dialogSettingsSectionName) {
         IDialogSettings settings = BytecodeVisualizerPlugin.getDefault().getDialogSettings();
         IDialogSettings section = settings.getSection(dialogSettingsSectionName);
         if (section == null) {
@@ -258,7 +258,7 @@ public class SelectJavaTypeDialog extends MessageDialog {
      * @param dialogSettingsSectionName The name of the dialog settings section
      * @return the initial size
      */
-    private Point getInitialSize(String dialogSettingsSectionName, Point initialSize) {
+    private static Point getInitialSize(String dialogSettingsSectionName, Point initialSize) {
         IDialogSettings settings = getDialogSettings(dialogSettingsSectionName);
         try {
             int x, y;
@@ -288,7 +288,7 @@ public class SelectJavaTypeDialog extends MessageDialog {
      * @param shell The shell whose geometry is to be stored
      * @param dialogSettingsSectionName The name of the dialog settings section
      */
-    private void persistDialogSettings(Shell shell, String dialogSettingsSectionName) {
+    private static void persistDialogSettings(Shell shell, String dialogSettingsSectionName) {
         Point shellLocation = shell.getLocation();
         Point shellSize = shell.getSize();
         IDialogSettings settings = getDialogSettings(dialogSettingsSectionName);

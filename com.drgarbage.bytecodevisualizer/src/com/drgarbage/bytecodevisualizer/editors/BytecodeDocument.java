@@ -16,8 +16,6 @@
 
 package com.drgarbage.bytecodevisualizer.editors;
 
-import java.util.List;
-
 import org.eclipse.jdt.internal.debug.ui.console.JavaStackTraceHyperlink;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.Document;
@@ -26,8 +24,6 @@ import org.eclipse.jface.text.Region;
 
 import com.drgarbage.asm.render.intf.IClassFileDocument;
 import com.drgarbage.asm.render.intf.IInstructionLine;
-import com.drgarbage.asm.render.intf.IMethodSection;
-import com.drgarbage.bytecode.ByteCodeConstants;
 
 /**
  * Bytecode document.
@@ -74,7 +70,7 @@ public class BytecodeDocument extends Document {
 		return new Region(0, 0);			
 	}
 	
-	private boolean invokedFromJavaStackTraceHyperlink(int position) {
+	private static boolean invokedFromJavaStackTraceHyperlink(int position) {
 		Thread thread = Thread.currentThread();
 		
 		StackTraceElement[] elements = thread.getStackTrace();

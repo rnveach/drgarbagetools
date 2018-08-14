@@ -15,7 +15,7 @@ public class SpanningTreeFinderTest extends TestCase {
 	 * 
 	 * @return
 	 */
-	private IDirectedGraphExt createTestTree0() {
+	private static IDirectedGraphExt createTestTree0() {
 		IDirectedGraphExt testTree = GraphExtentionFactory
 				.createDirectedGraphExtention();
 		INodeExt v0 = GraphExtentionFactory.createNodeExtention("v0");
@@ -26,7 +26,7 @@ public class SpanningTreeFinderTest extends TestCase {
 		return testTree;
 	}
 
-	private IDirectedGraphExt createTestTree1() {
+	private static IDirectedGraphExt createTestTree1() {
 		IDirectedGraphExt testTree = GraphExtentionFactory
 				.createDirectedGraphExtention();
 		INodeExt v0 = GraphExtentionFactory.createNodeExtention("v0");
@@ -66,7 +66,7 @@ public class SpanningTreeFinderTest extends TestCase {
 		return testTree;
 	}
 
-	private IDirectedGraphExt createTestTree2() {
+	private static IDirectedGraphExt createTestTree2() {
 		IDirectedGraphExt testTree = GraphExtentionFactory
 				.createDirectedGraphExtention();
 		INodeExt v0 = GraphExtentionFactory.createNodeExtention("v0");
@@ -110,7 +110,7 @@ public class SpanningTreeFinderTest extends TestCase {
 		return testTree;
 	}
 
-	private IDirectedGraphExt createTestTree3() {
+	private static IDirectedGraphExt createTestTree3() {
 		IDirectedGraphExt testTree = GraphExtentionFactory
 				.createDirectedGraphExtention();
 		INodeExt v0 = GraphExtentionFactory.createNodeExtention("v0");
@@ -148,7 +148,7 @@ public class SpanningTreeFinderTest extends TestCase {
 		return testTree;
 	}
 
-	private IDirectedGraphExt createTestTree4() {
+	private static IDirectedGraphExt createTestTree4() {
 		IDirectedGraphExt testTree = GraphExtentionFactory
 				.createDirectedGraphExtention();
 		INodeExt v0 = GraphExtentionFactory.createNodeExtention("v0");
@@ -186,7 +186,7 @@ public class SpanningTreeFinderTest extends TestCase {
 		return testTree;
 	}
 
-	public final void testFind() {
+	public static final void testFind() {
 		IDirectedGraphExt testTree = createTestTree0();
 		ISpanningTree spanningTree = null;
 		try {
@@ -238,7 +238,7 @@ public class SpanningTreeFinderTest extends TestCase {
 	}
 	
 	
-	public final void testFindBackEdges() {
+	public static final void testFindBackEdges() {
 		IEdgeListExt backEdges = SpanningTreeFinder.findBackEdges(createTestTree0());
 		assertEquals(backEdges.size(), 1);
 		

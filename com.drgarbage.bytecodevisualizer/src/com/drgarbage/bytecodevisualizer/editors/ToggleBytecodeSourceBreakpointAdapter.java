@@ -27,7 +27,6 @@ import org.eclipse.ui.texteditor.ITextEditor;
  * @version $Revision$
  * $Id$
  */
-@SuppressWarnings("restriction")
 public class ToggleBytecodeSourceBreakpointAdapter extends ToggleBreakpointAdapter {
 
     /* (non-Javadoc)

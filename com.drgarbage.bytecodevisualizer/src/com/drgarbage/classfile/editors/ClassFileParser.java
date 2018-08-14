@@ -677,7 +677,7 @@ public class ClassFileParser {
 		return buf.toString();
 	}
 
-	private void appendConstantPoolEntryInfo(StringBuffer buf, AbstractConstantPoolEntry en, int i){
+	private static void appendConstantPoolEntryInfo(StringBuffer buf, AbstractConstantPoolEntry en, int i){
 		buf.append(" /* [");
 		buf.append(String.valueOf(i));
 		buf.append("] ");

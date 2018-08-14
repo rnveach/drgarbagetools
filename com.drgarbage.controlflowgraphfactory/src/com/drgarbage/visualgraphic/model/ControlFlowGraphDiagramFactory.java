@@ -46,7 +46,6 @@ import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
@@ -68,7 +67,6 @@ import com.drgarbage.controlflowgraph.intf.INodeType;
 import com.drgarbage.controlflowgraphfactory.ControlFlowFactoryMessages;
 import com.drgarbage.controlflowgraphfactory.ControlFlowFactoryPlugin;
 import com.drgarbage.controlflowgraphfactory.actions.LayoutAlgorithmsUtils;
-import com.drgarbage.controlflowgraphfactory.export.AbstractExport;
 import com.drgarbage.controlflowgraphfactory.export.AbstractExport2;
 import com.drgarbage.controlflowgraphfactory.export.ExportException;
 import com.drgarbage.controlflowgraphfactory.export.GraphDOTExport;
@@ -94,7 +92,7 @@ public class ControlFlowGraphDiagramFactory {
 
 	public enum Result {
 		OK, YES_TO_ALL, NO_TO_ALL, CANCELED, ERROR, YES, NO
-	};
+	}
 
 	/**
 	 * Build bytecode graph diagram.
@@ -977,6 +975,7 @@ public class ControlFlowGraphDiagramFactory {
 	 * @throws IOException
 	 * @throws ControlFlowGraphException
 	 */
+	@SuppressWarnings("unchecked")
 	private static Result generateControlFlowGraphs(IProgressMonitor monitor,
 			final IFolder folder, final String elementName,
 			final InputStream in,

@@ -50,12 +50,6 @@ public class DecisionAnchor extends AbstractConnectionAnchor {
 	  *           flow_anchor (typ 3)
 	*/
 
-	
-	/**
-	 * unvisible constructor
-	 */
-	private DecisionAnchor() { }
-
 	/**
 	 * @see org.eclipse.draw2d.AbstractConnectionAnchor#AbstractConnectionAnchor(IFigure)
 	 */

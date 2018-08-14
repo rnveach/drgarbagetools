@@ -20,7 +20,6 @@ import org.eclipse.jdt.core.IJavaElement;
 
 import com.drgarbage.asm.AnnotationVisitor;
 import com.drgarbage.asm.Attribute;
-import com.drgarbage.asm.ClassVisitor;
 import com.drgarbage.asm.FieldVisitor;
 import com.drgarbage.asm.MethodVisitor;
 import com.drgarbage.asm.render.intf.IClassFileDocument;

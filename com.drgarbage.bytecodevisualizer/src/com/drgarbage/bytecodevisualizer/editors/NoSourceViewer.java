@@ -93,7 +93,7 @@ public class NoSourceViewer implements IPropertyChangeListener {
 	 * @param file the class file 
 	 * @return the package fragment root of the given class file
 	 */
-	private IPackageFragmentRoot getPackageFragmentRoot(IClassFile file) {
+	private static IPackageFragmentRoot getPackageFragmentRoot(IClassFile file) {
 
 		IJavaElement element= file.getParent();
 		while (element != null && element.getElementType() != IJavaElement.PACKAGE_FRAGMENT_ROOT)

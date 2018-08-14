@@ -46,7 +46,6 @@ import com.drgarbage.utils.ClassFileDocumentsUtils;
  * @version $Revision$ $Id: ToggleBytecodeBreakpointAdapter.java 1310
  *          2009-08-07 22:26:42Z Peter Palaga $
  */
-@SuppressWarnings("restriction")
 public class ToggleBytecodeBreakpointAdapter extends ToggleBreakpointAdapter {
 	
 	private boolean bytecodeDebugSupported = false;

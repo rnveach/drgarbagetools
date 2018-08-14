@@ -307,7 +307,7 @@ public class MaxCardBipartiteMatching {
 	 * @param node the node
 	 * @return the edge or null
 	 */
-	private IEdgeExt findMatchedEdge(INodeExt node) {
+	private static IEdgeExt findMatchedEdge(INodeExt node) {
 		IEdgeListExt inList = node.getIncomingEdgeList();
 		
 		/* for all incoming edges */
@@ -359,7 +359,7 @@ public class MaxCardBipartiteMatching {
 	 * @param path the ordered list of edges
 	 * @see #DEBUG
 	 */
-	private void printPathInfo(List<IEdgeExt> path){
+	private static void printPathInfo(List<IEdgeExt> path){
 		if(!DEBUG) return;
 	
 		StringBuffer buf = new StringBuffer("Path: ");
@@ -385,7 +385,7 @@ public class MaxCardBipartiteMatching {
 	 * @param node the node
 	 * @see #DEBUG
 	 */
-	private void printNodeInfo(INodeExt node){
+	private static void printNodeInfo(INodeExt node){
 		if(!DEBUG) return;
 		
 		debug("node " + node.getData() + " visited=" + node.isVisited()
@@ -400,7 +400,7 @@ public class MaxCardBipartiteMatching {
 	 * @param e the edge
 	 * @see #DEBUG
 	 */
-	private void printEdgeInfo(IEdgeExt e){
+	private static void printEdgeInfo(IEdgeExt e){
 		if(!DEBUG) return;
 		
 		debug("Edge: " + (e == null ? 

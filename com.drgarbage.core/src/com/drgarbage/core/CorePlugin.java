@@ -42,7 +42,6 @@ import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
 import org.osgi.framework.Constants;
 
-import com.drgarbage.utils.Messages;
 import com.drgarbage.utils.WebUtils;
 
 /**

@@ -100,7 +100,7 @@ public class SpanningTreeFinder {
 		}
 	}
 
-	private Set<INodeExt> extractAllNodes(IDirectedGraphExt graph) {
+	private static Set<INodeExt> extractAllNodes(IDirectedGraphExt graph) {
 		Set<INodeExt> nodes = new HashSet<INodeExt>();
 		for (int i = 0; i < graph.getNodeList().size(); i++) {
 			INodeExt n = graph.getNodeList().getNodeExt(i);

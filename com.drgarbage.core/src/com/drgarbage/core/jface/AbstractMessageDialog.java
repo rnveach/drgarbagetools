@@ -68,7 +68,7 @@ public class AbstractMessageDialog extends MessageDialog {
 
     }
     
-    private IDialogSettings getDialogSettings(String dialogSettingsSectionName) {
+    private static IDialogSettings getDialogSettings(String dialogSettingsSectionName) {
         IDialogSettings settings = CorePlugin.getDefault().getDialogSettings();
         IDialogSettings section = settings.getSection(dialogSettingsSectionName);
         if (section == null) {
@@ -130,7 +130,7 @@ public class AbstractMessageDialog extends MessageDialog {
      * @param dialogSettingsSectionName The name of the dialog settings section
      * @return the initial size
      */
-    private Point getInitialSize(String dialogSettingsSectionName, Point initialSize) {
+    private static Point getInitialSize(String dialogSettingsSectionName, Point initialSize) {
         IDialogSettings settings = getDialogSettings(dialogSettingsSectionName);
         try {
             int x, y;

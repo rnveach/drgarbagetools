@@ -39,7 +39,6 @@ import com.drgarbage.visualgraphic.model.GotoJumpVertex;
 import com.drgarbage.visualgraphic.model.InvokeVertex;
 import com.drgarbage.visualgraphic.model.RectangularVertex;
 import com.drgarbage.visualgraphic.model.ReturnVertex;
-import com.drgarbage.visualgraphic.model.RoundedRectangularVertex;
 import com.drgarbage.visualgraphic.model.StartVertex;
 import com.drgarbage.visualgraphic.model.SwitchVertex;
 

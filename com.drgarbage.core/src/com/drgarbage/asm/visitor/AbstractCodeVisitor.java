@@ -192,7 +192,7 @@ public abstract class AbstractCodeVisitor extends MethodVisitor implements ICode
 	 * @see com.drgarbage.asm.MethodVisitor#visitTableSwitchInsn(int, int, com.drgarbage.asm.Label, com.drgarbage.asm.Label[])
 	 */
 	public void visitTableSwitchInsn(int min, int max, Label dflt,
-			Label[] labels) {
+			Label... labels) {
 	}
 
 	/* (non-Javadoc)

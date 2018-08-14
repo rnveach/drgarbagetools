@@ -211,7 +211,7 @@ public class OperandStackViewPageIml extends OperandStackViewPage {
      * incidence lists of nodes.
      * @param graph control flow graph
      */
-    private void removeBackEdges(IDirectedGraphExt graph){    	
+    private static void removeBackEdges(IDirectedGraphExt graph){    	
     	IEdgeListExt backEdges = SpanningTreeFinder.findBackEdges(graph);
 		
 		IEdgeListExt edges = graph.getEdgeList();
@@ -231,7 +231,7 @@ public class OperandStackViewPageIml extends OperandStackViewPage {
      * @param graph control flow graph
      * @return list of start nodes
      */
-    private List<INodeExt> getAllStartNodes(IDirectedGraphExt graph){
+    private static List<INodeExt> getAllStartNodes(IDirectedGraphExt graph){
     	List<INodeExt> listOfStartNodes= new ArrayList<INodeExt>();
     	INodeListExt nodes = graph.getNodeList();
     	for(int i = 0; i < nodes.size(); i++){

@@ -16,13 +16,10 @@
 
 package com.drgarbage.bytecodevisualizer.editors;
 
-import java.util.Iterator;
 
 import org.eclipse.debug.internal.ui.InstructionPointerAnnotation;
 import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.debug.ui.IDebugUIConstants;
-import org.eclipse.debug.ui.contexts.DebugContextEvent;
-import org.eclipse.debug.ui.contexts.IDebugContextListener;
 import org.eclipse.jdt.internal.debug.core.model.JDIStackFrame;
 import org.eclipse.jdt.internal.ui.JavaPlugin;
 import org.eclipse.jdt.internal.ui.javaeditor.ClassFileDocumentProvider;
@@ -49,7 +46,6 @@ import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.editors.text.FileDocumentProvider;
 import org.eclipse.ui.editors.text.TextEditor;
-import org.eclipse.ui.internal.IWorkbenchGraphicConstants;
 import org.eclipse.ui.internal.WorkbenchImages;
 import org.eclipse.ui.texteditor.ITextEditorActionConstants;
 

@@ -160,7 +160,7 @@ public class HungarianMethod {
 	 * @param partB the second partition
 	 * @return
 	 */
-	private List<INodeExt> getMin(IDirectedGraphExt graph, List<INodeExt> partA, List<INodeExt> partB){
+	private static List<INodeExt> getMin(IDirectedGraphExt graph, List<INodeExt> partA, List<INodeExt> partB){
 
 		List<INodeExt> coveredNodes = new ArrayList<INodeExt>();
 		INodeExt n = null;
@@ -375,7 +375,7 @@ public class HungarianMethod {
 	 * @param graph the bipartite graph
 	 * @param coveredNodes the set of covered nodes (row or columns in the matrix representation)
 	 */
-	private void updateGraph(IDirectedGraphExt graph, List<INodeExt> coveredNodes){
+	private static void updateGraph(IDirectedGraphExt graph, List<INodeExt> coveredNodes){
 		
 		/*	find the minimum weight value of the uncovered edges. */
 		int minUncovered = Integer.MAX_VALUE;

@@ -67,7 +67,7 @@ public class PaddedInstruction extends AbstractInstruction {
         }
     }
     
-    private int paddingBytes(int bytesCount) {
+    private static int paddingBytes(int bytesCount) {
         
         int bytesToPad = 4 - bytesCount % 4;
         return (bytesToPad == 4) ? 0 : bytesToPad;

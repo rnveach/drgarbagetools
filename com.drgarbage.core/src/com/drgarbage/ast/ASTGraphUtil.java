@@ -300,7 +300,6 @@ public class ASTGraphUtil {
 	 * @param node the AST-node
 	 * @return the image
 	 */
-	@SuppressWarnings("restriction")
 	public static Image getImage(ASTNode node){
 		switch(node.getNodeType()){
 		case ASTNode.COMPILATION_UNIT:

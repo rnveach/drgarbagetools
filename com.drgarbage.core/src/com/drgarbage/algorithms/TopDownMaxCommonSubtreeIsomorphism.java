@@ -24,7 +24,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.drgarbage.controlflowgraph.ControlFlowGraphException;
@@ -496,26 +495,6 @@ public class TopDownMaxCommonSubtreeIsomorphism {
 				System.out.println();
 			}
 			System.out.println("--------------");
-		}
-		
-		/**
-		 * printMap
-		 * @param  Map<INodeExt, List<IEdgeExt>> 
-		 * 
-		 */
-		private void printMap(Map<INodeExt, List<IEdgeExt>> map){
-			if(!DEBUG) return;
-			
-			System.out.println("map B:");
-			for(Entry<INodeExt, List<IEdgeExt>> entry: map.entrySet()){
-				System.out.print(entry.getKey().getData() + ": ");
-				
-				for(IEdgeExt e: entry.getValue()){
-					System.out.print(" " + ((INodeExt)e.getTarget().getData()).getData());
-				}
-				System.out.println();
-			}	
-			System.out.println();
 		}
 		
 		private static void printGraph(IDirectedGraphExt g) {

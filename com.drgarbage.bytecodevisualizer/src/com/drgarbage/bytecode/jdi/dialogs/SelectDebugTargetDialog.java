@@ -25,7 +25,6 @@ import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.internal.ui.DebugPluginImages;
-import org.eclipse.debug.internal.ui.DebugUIPlugin;
 import org.eclipse.debug.ui.IDebugUIConstants;
 import org.eclipse.jdt.debug.core.IJavaType;
 import org.eclipse.jface.dialogs.IDialogConstants;
@@ -262,7 +261,7 @@ public class SelectDebugTargetDialog extends MessageDialog {
         
     }
     
-    private IDialogSettings getDialogSettings(String dialogSettingsSectionName) {
+    private static IDialogSettings getDialogSettings(String dialogSettingsSectionName) {
         IDialogSettings settings = BytecodeVisualizerPlugin.getDefault().getDialogSettings();
         IDialogSettings section = settings.getSection(dialogSettingsSectionName);
         if (section == null) {
@@ -315,7 +314,7 @@ public class SelectDebugTargetDialog extends MessageDialog {
      * @param dialogSettingsSectionName The name of the dialog settings section
      * @return the initial size
      */
-    private Point getInitialSize(String dialogSettingsSectionName, Point initialSize) {
+    private static Point getInitialSize(String dialogSettingsSectionName, Point initialSize) {
         IDialogSettings settings = getDialogSettings(dialogSettingsSectionName);
         try {
             int x, y;
@@ -345,7 +344,7 @@ public class SelectDebugTargetDialog extends MessageDialog {
      * @param shell The shell whose geometry is to be stored
      * @param dialogSettingsSectionName The name of the dialog settings section
      */
-    private void persistDialogSettings(Shell shell, String dialogSettingsSectionName) {
+    private static void persistDialogSettings(Shell shell, String dialogSettingsSectionName) {
         Point shellLocation = shell.getLocation();
         Point shellSize = shell.getSize();
         IDialogSettings settings = getDialogSettings(dialogSettingsSectionName);

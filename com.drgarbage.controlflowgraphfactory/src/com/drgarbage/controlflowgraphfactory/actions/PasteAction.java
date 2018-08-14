@@ -18,29 +18,15 @@ package com.drgarbage.controlflowgraphfactory.actions;
 
 import java.util.List;
 
-import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.gef.EditPart;
-import org.eclipse.gef.internal.GEFMessages;
-import org.eclipse.gef.palette.CombinedTemplateCreationEntry;
-import org.eclipse.gef.palette.PaletteTemplateEntry;
 import org.eclipse.gef.ui.actions.Clipboard;
 import org.eclipse.gef.ui.actions.WorkbenchPartAction;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.ISharedImages;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.internal.WorkbenchMessages;
 
 import com.drgarbage.controlflowgraphfactory.editors.ControlFlowGraphEditor;
 import com.drgarbage.visualgraphic.commands.PasteCommand;
-import com.drgarbage.visualgraphic.commands.VertexBaseCreateCommand;
-import com.drgarbage.visualgraphic.model.ModelElement;
-import com.drgarbage.visualgraphic.model.RectangularVertex;
 import com.drgarbage.visualgraphic.model.VertexBase;
 
 public class PasteAction extends WorkbenchPartAction
@@ -87,6 +73,7 @@ public class PasteAction extends WorkbenchPartAction
 	 * Sets the default {@link Clipboard Clipboard's} contents to be the currently selected
 	 * template.
 	 */
+	@SuppressWarnings("unchecked")
 	public void run() {
 		Object o = Clipboard.getDefault().getContents();
 		if(o != null

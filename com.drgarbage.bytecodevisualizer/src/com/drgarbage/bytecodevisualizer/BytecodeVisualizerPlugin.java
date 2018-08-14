@@ -40,7 +40,6 @@ import com.drgarbage.core.CoreConstants;
 /**
  * The activator class controls the plug-in life cycle
  */
-@SuppressWarnings("restriction")
 public class BytecodeVisualizerPlugin extends AbstractUIPlugin implements BytecodeVisualizerPreferenceConstats, IStartup {
 
 	private static String ICONS_PATH = "img/"; //$NON-NLS-1$

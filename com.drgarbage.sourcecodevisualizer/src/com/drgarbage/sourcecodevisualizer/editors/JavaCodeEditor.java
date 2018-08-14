@@ -76,10 +76,7 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Sash;
 import org.eclipse.swt.widgets.ScrollBar;
-import org.eclipse.ui.IEditorInput;
-import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IMemento;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.editors.text.EditorsUI;
 import org.eclipse.ui.texteditor.AbstractDecoratedTextEditorPreferenceConstants;
 import org.eclipse.ui.texteditor.AbstractTextEditor;
@@ -193,10 +190,9 @@ public class JavaCodeEditor extends CompilationUnitEditor implements IControlFlo
 			//FIXME Warn here
 		}
 		
-		final IEditorInput editorInput = getEditorInput();
-		final IWorkbenchPage page = getEditorSite().getPage();
-		final IEditorPart part = this;
-		final String editorID = getEditorSite().getId();
+		getEditorInput();
+		getEditorSite().getPage();
+		getEditorSite().getId();
 		
 		createPartControlsImpl(parent);
 
@@ -483,7 +479,7 @@ public class JavaCodeEditor extends CompilationUnitEditor implements IControlFlo
 				//System.out.println("event=" + event.getProperty());
 			}
 		}
-	};
+	}
 	
 	/*
 	 * @see org.eclipse.ui.texteditor.AbstractDecoratedTextEditor#initializeEditor()
@@ -528,7 +524,7 @@ public class JavaCodeEditor extends CompilationUnitEditor implements IControlFlo
 	 * @param the control object of the first view. (text editor)
 	 * @param the control object of the second view. (control flow graph view)
 	 */
-	private void synchronizeScrollBars(final StyledText textWidget, final FigureCanvas controlFlowGraphCanvas){
+	private static void synchronizeScrollBars(final StyledText textWidget, final FigureCanvas controlFlowGraphCanvas){
 		/* Synchronize scroll bars */
 		//final ScrollBar vBar1 = textWidget.getVerticalBar();
 		final ScrollBar vBar2 = controlFlowGraphCanvas.getVerticalBar();

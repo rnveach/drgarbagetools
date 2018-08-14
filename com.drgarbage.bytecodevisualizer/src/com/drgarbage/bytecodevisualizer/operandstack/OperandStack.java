@@ -101,7 +101,7 @@ public class OperandStack implements Opcodes{
 		TYPES,
 		VALUES,
 		ALL;
-	};
+	}
 
 	public static int UNKNOWN_SIZE = -1;
 
@@ -503,7 +503,7 @@ public class OperandStack implements Opcodes{
 	 * @param graph control flow graph
 	 * @return list of start nodes
 	 */
-	private List<INodeExt> getAllStartNodes(IDirectedGraphExt graph){
+	private static List<INodeExt> getAllStartNodes(IDirectedGraphExt graph){
 		List<INodeExt> listOfStartNodes= new ArrayList<INodeExt>();
 		INodeListExt nodes = graph.getNodeList();
 		for(int i = 0; i < nodes.size(); i++){
@@ -1436,7 +1436,7 @@ public class OperandStack implements Opcodes{
 	 * @param opcode
 	 * @return type
 	 */
-	private String getOperandTypeOfLoadInstruction(int opcode){
+	private static String getOperandTypeOfLoadInstruction(int opcode){
 		switch (opcode){
 		case OPCODE_AALOAD:
 			return L_REFERENCE;
@@ -1487,7 +1487,7 @@ public class OperandStack implements Opcodes{
 	 * @param classConstantPool
 	 * @return {field name, filed descriptor}
 	 */
-	private String[] getFieldNameAndDescriptor(AbstractInstruction i, AbstractConstantPoolEntry[] classConstantPool){
+	private static String[] getFieldNameAndDescriptor(AbstractInstruction i, AbstractConstantPoolEntry[] classConstantPool){
 		String[] ret = new String[2];
 		
 		AbstractConstantPoolEntry cpInfo = classConstantPool[((IConstantPoolIndexProvider)i).getConstantPoolIndex()];
@@ -1622,7 +1622,7 @@ public class OperandStack implements Opcodes{
 	 * @param classConstantPool
 	 * @return class name
 	 */
-	private String getConstantPoolClassName(AbstractInstruction i, AbstractConstantPoolEntry[] classConstantPool){
+	private static String getConstantPoolClassName(AbstractInstruction i, AbstractConstantPoolEntry[] classConstantPool){
 		if (i instanceof IConstantPoolIndexProvider) {
 			return getConstantPoolClassName(((IConstantPoolIndexProvider) i)
 					.getConstantPoolIndex(), 
@@ -1637,7 +1637,7 @@ public class OperandStack implements Opcodes{
 	 * @param classConstantPool
 	 * @return class name
 	 */
-	private String getConstantPoolClassName(int index, AbstractConstantPoolEntry[] classConstantPool){
+	private static String getConstantPoolClassName(int index, AbstractConstantPoolEntry[] classConstantPool){
 
 		AbstractConstantPoolEntry cpInfo = classConstantPool[index];
 
@@ -1790,7 +1790,7 @@ public class OperandStack implements Opcodes{
 		}
 	}
 
-	private void handleException(String message, Throwable t){
+	private static void handleException(String message, Throwable t){
 		IStatus status = BytecodeVisualizerPlugin.createErrorStatus(message, t);
 		BytecodeVisualizerPlugin.log(status);
 	}

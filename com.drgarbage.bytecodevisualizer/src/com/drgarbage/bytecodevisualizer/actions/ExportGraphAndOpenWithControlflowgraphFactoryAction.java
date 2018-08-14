@@ -19,11 +19,8 @@ package com.drgarbage.bytecodevisualizer.actions;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.ui.actions.RetargetAction;
-import org.osgi.framework.Bundle;
-import org.osgi.framework.BundleException;
 
 import com.drgarbage.asm.render.intf.IClassFileDocument;
 import com.drgarbage.asm.render.intf.IInstructionLine;
@@ -31,7 +28,6 @@ import com.drgarbage.asm.render.intf.IMethodSection;
 import com.drgarbage.bytecode.instructions.AbstractInstruction;
 import com.drgarbage.bytecodevisualizer.BytecodeVisualizerMessages;
 import com.drgarbage.bytecodevisualizer.editors.BytecodeEditor;
-import com.drgarbage.core.CoreConstants;
 import com.drgarbage.core.CoreMessages;
 import com.drgarbage.core.CorePlugin;
 import com.drgarbage.core.IExternalCommunication;

@@ -799,11 +799,11 @@ public class MaxWeightedBipartiteMatchingTest extends TestCase{
 				{ 0, 0, 0, 3 }
 		};
 		TestSet t = createTestSet(weights2);
-		MaxWeightedBipartiteMatching m = new MaxWeightedBipartiteMatching();
-		List<IEdgeExt> edges  = new MaxWeightedBipartiteMatching(DEBUG).execute(t.graph, t.partA, t.partB);
+		new MaxWeightedBipartiteMatching();
+		new MaxWeightedBipartiteMatching(DEBUG).execute(t.graph, t.partA, t.partB);
 		
-		List<INodeExt> partAnew = new ArrayList<INodeExt>();
-		List<INodeExt> partBnew = new ArrayList<INodeExt>();
+		//List<INodeExt> partAnew = new ArrayList<INodeExt>();
+		//List<INodeExt> partBnew = new ArrayList<INodeExt>();
 		//m.createSymetricalCompleteBipartiteGraph(t1.partA, partAnew, t1.partB, partBnew);
 		
 	}
@@ -812,7 +812,7 @@ public class MaxWeightedBipartiteMatchingTest extends TestCase{
 	 * For debugging purposes only.
 	 * @param matrix the matrix
 	 */
-	private void printMatrix(int[][] matrix){
+	private static void printMatrix(int[][] matrix){
 		StringBuffer buf = new StringBuffer();
 		
 		buf.append("   ");

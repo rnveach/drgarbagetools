@@ -20,7 +20,6 @@ import java.beans.PropertyChangeEvent;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
-import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.text.TextFlow;
 import org.eclipse.gef.EditPolicy;
 

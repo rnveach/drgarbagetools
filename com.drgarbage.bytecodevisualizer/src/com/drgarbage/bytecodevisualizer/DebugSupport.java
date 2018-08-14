@@ -52,7 +52,6 @@ import com.sun.jdi.request.StepRequest;
  * @version $Revision$
  * $Id$
  */
-@SuppressWarnings("restriction")
 public class DebugSupport {
 	
 	/**
@@ -110,7 +109,7 @@ public class DebugSupport {
 	 * Exception handler.
 	 * @param e
 	 */
-	private void exceptionHandler(Exception e){
+	private static void exceptionHandler(Exception e){
 		CorePlugin.getDefault().getLog().log(
 				new Status(IStatus.ERROR, CoreConstants.BYTECODE_VISUALIZER_PLUGIN_ID, e.getMessage(), e)
 				);

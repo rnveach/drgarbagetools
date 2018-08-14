@@ -69,7 +69,7 @@ public class VertexBaseDeleteCommand extends Command {
 	 * Reconnects a List of Connections with their previous endpoints.
 	 * @param connections a non-null List of connections
 	 */
-	private void addConnections(List connections) {
+	private static void addConnections(List connections) {
 		for (Iterator iter = connections.iterator(); iter.hasNext();) {
 			Connection conn = (Connection) iter.next();
 			conn.reconnect();
@@ -109,7 +109,7 @@ public class VertexBaseDeleteCommand extends Command {
 	 * Disconnects a List of Connections from their endpoints.
 	 * @param connections a non-null List of connections
 	 */
-	private void removeConnections(List connections) {
+	private static void removeConnections(List connections) {
 		for (Iterator iter = connections.iterator(); iter.hasNext();) {
 			Connection conn = (Connection) iter.next();
 			conn.disconnect();

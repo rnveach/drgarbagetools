@@ -35,7 +35,6 @@ import org.eclipse.ui.texteditor.RetargetTextEditorAction;
 import com.drgarbage.bytecodevisualizer.BytecodeVisualizerMessages;
 import com.drgarbage.bytecodevisualizer.editors.BytecodeEditor;
 import com.drgarbage.bytecodevisualizer.editors.ISourceCodeViewer;
-import com.drgarbage.bytecodevisualizer.editors.JavaSourceCodeViewer;
 
 /**
  * ActionBar Contributor.

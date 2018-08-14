@@ -21,7 +21,6 @@ import java.util.List;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Figure;
 import org.eclipse.draw2d.FigureCanvas;
-import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LightweightSystem;
 import org.eclipse.draw2d.LineBorder;
@@ -39,10 +38,8 @@ import com.drgarbage.asm.render.intf.IMethodSection;
 import com.drgarbage.bytecodevisualizer.BytecodeVisualizerMessages;
 import com.drgarbage.bytecodevisualizer.BytecodeVisualizerPlugin;
 import com.drgarbage.bytecodevisualizer.preferences.BytecodeVisualizerPreferenceConstats;
-import com.drgarbage.core.CoreMessages;
 import com.drgarbage.core.img.CoreImg;
 import com.drgarbage.draw2d.ControlFlowGraphFigure;
-import com.drgarbage.utils.Messages;
 
 
 /**

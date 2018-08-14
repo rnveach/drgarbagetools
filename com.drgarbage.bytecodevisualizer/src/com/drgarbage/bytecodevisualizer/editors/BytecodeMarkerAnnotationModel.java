@@ -67,7 +67,6 @@ import com.sun.jdi.StackFrame;
  * @version $Revision$ 
  * $Id$
  */
-@SuppressWarnings("restriction")
 public class BytecodeMarkerAnnotationModel extends
 		ClassFileMarkerAnnotationModel {
 

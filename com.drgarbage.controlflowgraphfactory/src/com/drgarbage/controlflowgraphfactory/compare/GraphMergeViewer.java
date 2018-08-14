@@ -58,7 +58,6 @@ import com.drgarbage.algorithms.TopDownMaxCommonSubtreeIsomorphism;
 import com.drgarbage.algorithms.TopDownSubtreeIsomorphism;
 import com.drgarbage.controlflowgraph.ControlFlowGraphException;
 import com.drgarbage.controlflowgraph.intf.GraphUtils;
-import com.drgarbage.controlflowgraph.intf.IEdgeExt;
 import com.drgarbage.controlflowgraph.intf.IEdgeListExt;
 import com.drgarbage.controlflowgraph.intf.ISpanningTree;
 import com.drgarbage.controlflowgraph.intf.IDirectedGraphExt;
@@ -159,7 +158,7 @@ public class GraphMergeViewer extends ContentMergeViewer {
 	 * @param scrolledCanvasLeft 
 	 * @param scrolledCanvasRight
 	 */
-	private void synchronizeScrollBars(final FigureCanvas scrolledCanvasLeft, final FigureCanvas scrolledCanvasRight)
+	private static void synchronizeScrollBars(final FigureCanvas scrolledCanvasLeft, final FigureCanvas scrolledCanvasRight)
 	{
 		final ScrollBar verticalScrollBarRight = scrolledCanvasRight.getVerticalBar();
 		final ScrollBar horizontalScrollBarRight = scrolledCanvasRight.getHorizontalBar();
@@ -255,7 +254,7 @@ public class GraphMergeViewer extends ContentMergeViewer {
 	 * @param input the diagram object
 	 * @return a control flow graph diagram object
 	 */
-	private ControlFlowGraphDiagram getControlFlowGraphDiagramFromInput(Object input) {
+	private static ControlFlowGraphDiagram getControlFlowGraphDiagramFromInput(Object input) {
 		if (input != null) {
 			InputStream stream= null;
 			ControlFlowGraphDiagram diagram = null;
@@ -272,15 +271,15 @@ public class GraphMergeViewer extends ContentMergeViewer {
 					} catch (CoreException ex) {
 						ControlFlowFactoryPlugin.log(ex);
 						Messages.error(ControlFlowFactoryMessages.GraphCompare_Error_Coudl_not_open_or_create_diagram 
-								+ CoreMessages.ExceptionAdditionalMessage);;
+								+ CoreMessages.ExceptionAdditionalMessage);
 					} catch (IOException e) {
 						ControlFlowFactoryPlugin.log(e);
 						Messages.error(ControlFlowFactoryMessages.GraphCompare_Error_Coudl_not_open_or_create_diagram 
-								+ CoreMessages.ExceptionAdditionalMessage);;
+								+ CoreMessages.ExceptionAdditionalMessage);
 					} catch (ClassNotFoundException e) {
 						ControlFlowFactoryPlugin.log(e);
 						Messages.error(ControlFlowFactoryMessages.GraphCompare_Error_Coudl_not_open_or_create_diagram 
-								+ CoreMessages.ExceptionAdditionalMessage);;
+								+ CoreMessages.ExceptionAdditionalMessage);
 					}
 				}
 			}
@@ -297,7 +296,7 @@ public class GraphMergeViewer extends ContentMergeViewer {
 	 * @param viewer the graphical viewer
 	 * @param input the diagram object
 	 */
-	private void setInput(GraphicalViewer viewer, ControlFlowGraphDiagram diagram){
+	private static void setInput(GraphicalViewer viewer, ControlFlowGraphDiagram diagram){
 		if(viewer != null && diagram != null)
 			viewer.setContents(diagram);
 	}
@@ -329,7 +328,7 @@ public class GraphMergeViewer extends ContentMergeViewer {
 	 * @return byte array
 	 * @throws IOException
 	 */
-	private byte[] modelToByteArray(ControlFlowGraphDiagram model) throws IOException{
+	private static byte[] modelToByteArray(ControlFlowGraphDiagram model) throws IOException{
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		ObjectOutputStream oos = new ObjectOutputStream(out);
 		oos.writeObject(model);

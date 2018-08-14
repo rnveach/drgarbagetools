@@ -65,7 +65,6 @@ public class ExportAsImageAction extends RetargetAction {
 	private final static String buttonExportAsJPEGText = "JPEG File Interchange Format (*.jpg, *.jpeg)";
 	private final static String buttonExportAsBMPText = "Windows Bitmap (*.bmp)";
 	private final static String buttonExportAsICOText = "Image Icon (*.ico)";
-	private final static String buttonExportAsGIFText = "Graphics Interchange Format (*.gif)";
 	private final static String buttonExportAsPNGText = "Portable Network Graphics (*.png)";
 	
 	/* selected format */

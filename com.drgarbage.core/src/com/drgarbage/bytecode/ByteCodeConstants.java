@@ -597,6 +597,6 @@ public class ByteCodeConstants implements Opcodes {
 	public static final String INVOKE_DYNAMIC_BOOTSTRAP_METHOD_ATTR_INDEX = "bootstrap_method_attr_index";
 	public static final String INVOKE_DYNAMIC_NAME_AND_TYPE_INDEX = "name_and_type_index";
 
-	public static enum Align {LEFT, CENTER, RIGHT};  
+	public static enum Align {LEFT, CENTER, RIGHT}  
     
 }

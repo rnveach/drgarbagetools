@@ -26,8 +26,6 @@ import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.internal.GEFMessages;
-import org.eclipse.gef.palette.CombinedTemplateCreationEntry;
-import org.eclipse.gef.palette.PaletteTemplateEntry;
 import org.eclipse.gef.requests.GroupRequest;
 import org.eclipse.gef.ui.actions.Clipboard;
 import org.eclipse.gef.ui.actions.WorkbenchPartAction;
@@ -43,7 +41,6 @@ import org.eclipse.ui.internal.WorkbenchMessages;
 import com.drgarbage.visualgraphic.model.Connection;
 import com.drgarbage.visualgraphic.model.ControlFlowGraphDiagram;
 import com.drgarbage.visualgraphic.model.ControlFlowGraphDiagramFactory;
-import com.drgarbage.visualgraphic.model.ModelElement;
 import com.drgarbage.visualgraphic.model.VertexBase;
 
 public class CutAction extends WorkbenchPartAction

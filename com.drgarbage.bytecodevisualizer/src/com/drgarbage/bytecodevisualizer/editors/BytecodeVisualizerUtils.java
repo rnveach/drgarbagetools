@@ -40,10 +40,6 @@ public class BytecodeVisualizerUtils {
 				return IClassFileEditor.INVALID_LINE;
 			}
 		
-			if(element == null){
-				return IClassFileEditor.INVALID_LINE;
-			}
-			
 			IDocument document= sourceViewer.getDocument();
 			if (document == null){
 				return IClassFileEditor.INVALID_LINE;
