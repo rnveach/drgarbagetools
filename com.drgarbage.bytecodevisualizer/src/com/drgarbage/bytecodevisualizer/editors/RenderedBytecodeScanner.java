@@ -273,7 +273,7 @@ public final class RenderedBytecodeScanner extends AbstractJavaScanner implement
 	/*
 	 * @see AbstractJavaScanner#createRules()
 	 */
-	protected List createRules() {
+	protected List<IRule> createRules() {
 
 		List<IRule> rules= new ArrayList<IRule>();
 

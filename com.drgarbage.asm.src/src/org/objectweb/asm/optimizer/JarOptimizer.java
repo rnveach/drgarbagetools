@@ -68,19 +68,25 @@ public class JarOptimizer {
         File f = new File(args[0]);
         InputStream is = new GZIPInputStream(new FileInputStream(f));
         BufferedReader lnr = new LineNumberReader(new InputStreamReader(is));
-        while (true) {
-            String line = lnr.readLine();
-            if (line != null) {
-                if (line.startsWith("class")) {
-                    String c = line.substring(6, line.lastIndexOf(' '));
-                    String sc = line.substring(line.lastIndexOf(' ') + 1);
-                    HIERARCHY.put(c, sc);
-                } else {
-                    API.add(line);
-                }
-            } else {
-                break;
-            }
+        try {
+	        while (true) {
+	            String line = lnr.readLine();
+	            if (line != null) {
+	                if (line.startsWith("class")) {
+	                    String c = line.substring(6, line.lastIndexOf(' '));
+	                    String sc = line.substring(line.lastIndexOf(' ') + 1);
+	                    HIERARCHY.put(c, sc);
+	                } else {
+	                    API.add(line);
+	                }
+	            } else {
+	                break;
+	            }
+	        }
+        }
+        finally {
+        	lnr.close();
+        	is.close();
         }
 
         int argIndex = 1;

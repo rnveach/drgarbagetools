@@ -650,7 +650,7 @@ public class ClassFileConfiguration extends TextSourceViewerConfiguration {
 		 * @since 3.4
 		 */
 		private IJavaElement[] selectOpenableElements(IJavaElement[] elements) {
-			List result= new ArrayList(elements.length);
+			List<IJavaElement> result= new ArrayList<IJavaElement>(elements.length);
 			for (int i= 0; i < elements.length; i++) {
 				IJavaElement element= elements[i];
 				switch (element.getElementType()) {

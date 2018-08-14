@@ -58,6 +58,7 @@ import com.drgarbage.algorithms.TopDownMaxCommonSubtreeIsomorphism;
 import com.drgarbage.algorithms.TopDownSubtreeIsomorphism;
 import com.drgarbage.controlflowgraph.ControlFlowGraphException;
 import com.drgarbage.controlflowgraph.intf.GraphUtils;
+import com.drgarbage.controlflowgraph.intf.IEdgeExt;
 import com.drgarbage.controlflowgraph.intf.IEdgeListExt;
 import com.drgarbage.controlflowgraph.intf.ISpanningTree;
 import com.drgarbage.controlflowgraph.intf.IDirectedGraphExt;
@@ -471,7 +472,7 @@ public class GraphMergeViewer extends ContentMergeViewer {
 		
 		IEdgeListExt edgeLeftGraph = cfgLeft.getEdgeList();
 		IEdgeListExt edgeLeftTree = leftTree.getEdgeList();
-		List removedEdges = new ArrayList();
+		List<IEdgeExt> removedEdges = new ArrayList<IEdgeExt>();
 		
 		boolean flag = false;
 		for(int i = 0; i < edgeLeftGraph.size(); i++){
